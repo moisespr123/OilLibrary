@@ -53,7 +53,7 @@ def session():
     settings = {"sqlalchemy.url": 'sqlite:///{0}'.format(db_file)}
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
-    DBSession.configure(extension=register())
+    DBSession.configure()
 
     yield DBSession
 

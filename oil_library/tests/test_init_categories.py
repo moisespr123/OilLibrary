@@ -19,7 +19,7 @@ import shutil
 import pytest
 
 from sqlalchemy import engine_from_config
-from zope.sqlalchemy import ZopeTransactionExtension
+from zope.sqlalchemy import register
 
 import oil_library
 from oil_library.models import DBSession
@@ -53,7 +53,7 @@ def session():
     settings = {"sqlalchemy.url": 'sqlite:///{0}'.format(db_file)}
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
-    DBSession.configure(extension=ZopeTransactionExtension())
+    DBSession.configure(extension=register())
 
     yield DBSession
 

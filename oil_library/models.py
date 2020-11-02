@@ -25,7 +25,7 @@ from sqlalchemy.orm import (scoped_session,
 
 from zope.sqlalchemy import register
 
-DBSession = scoped_session(sessionmaker(extension=register()))
+DBSession = scoped_session(sessionmaker())
 
 # Let's make declarative_base a class decorator
 declarative_base = lambda cls: real_declarative_base(cls=cls)

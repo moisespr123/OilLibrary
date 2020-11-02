@@ -30,7 +30,7 @@ def initialize_sql(settings):
     # after a commit.
     # - This of course means that we need to manually close the session when
     #   we are done.
-    DBSession.configure()
+    DBSession.configure(autoflush=False)
 
     Base.metadata.create_all(engine)
 

@@ -17,7 +17,7 @@ from .init_imported_record import purge_old_records, add_oil_object
 from .init_categories import process_categories
 from .init_oil import process_oils
 
-from zope.sqlalchemy import ZopeTransactionExtension
+from zope.sqlalchemy import register
 
 logger = logging.getLogger(__name__)
 
